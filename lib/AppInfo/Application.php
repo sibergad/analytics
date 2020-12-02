@@ -11,18 +11,11 @@
 
 namespace OCA\Analytics\AppInfo;
 
-use OCA\Analytics\Dashboard\Widget;
 use OCA\Analytics\Flow\FlowOperation;
-use OCA\Analytics\Listener\LoadAdditionalScripts;
 use OCA\Analytics\Notification\Notifier;
-use OCA\Analytics\Search\Provider;
-use OCA\Files\Event\LoadAdditionalScriptsEvent;
 use OCP\AppFramework\App;
-use OCP\AppFramework\Bootstrap\IBootContext;
-use OCP\AppFramework\Bootstrap\IBootstrap;
-use OCP\AppFramework\Bootstrap\IRegistrationContext;
 
-class Application extends App implements IBootstrap
+class Application extends App
 {
     public const APP_ID = 'analytics';
 
@@ -31,17 +24,10 @@ class Application extends App implements IBootstrap
         parent::__construct(self::APP_ID, $urlParams);
     }
 
-    public function register(IRegistrationContext $context): void
+    public function register()
     {
-        $context->registerDashboardWidget(Widget::class);
-        $context->registerEventListener(LoadAdditionalScriptsEvent::class, LoadAdditionalScripts::class);
-        $context->registerSearchProvider(Provider::class);
-        $this->registerNavigationEntry();
         $this->registerNotifications();
-    }
-
-    public function boot(IBootContext $context): void
-    {
+        $this->registerNavigationEntry();
         $this->getContainer()->query(FlowOperation::class)->register();
     }
 
@@ -64,5 +50,4 @@ class Application extends App implements IBootstrap
         };
         \OC::$server->getNavigationManager()->add($navigationEntry);
     }
-
 }
