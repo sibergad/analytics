@@ -75,15 +75,15 @@ OC.L10N.register(
         'Drilldown': 'Детализация',
         'Datasource simulation': 'Симуляция источника данных',
         'Link copied': 'Ссылка скопирована',
-        'Bar': 'Bar',
-        'Text variables': 'Text variables',
-        'Text variables can be used in the name or subheader.<br>They are replaced when the report is executed.': 'Text variables can be used in the name or subheader.<br>They are replaced when the report is executed.',
-        'Color': 'Color',
+        'Bar': 'Диаграмма',
+        'Text variables': 'Текстовые переменные',
+        'Text variables can be used in the name or subheader.<br>They are replaced when the report is executed.': 'Текстовые переменные могут быть использованы в имени или подзаголовке.<br>Они могут быть изменены во время выполнения отчета.',
+        'Color': 'Цвет',
             'Datasets can be changed in a separate maintenance': 'Datasets can be changed in a separate maintenance',
             'Column descriptions are used from the dataset and can not be changed on a report level': 'Column descriptions are used from the dataset and can not be changed on a report level',
             'Switch to the dataset maintenance from here?': 'Switch to the dataset maintenance from here?',
             'Dataset maintenance': 'Dataset maintenance',
-            'Back to reports': 'Back to reports',
-            'New dataset': 'New dataset'
+            'Back to reports': 'Вернуться к отчетам',
+            'New dataset': 'Новый набор данных'
     },
     '');
